@@ -1,0 +1,15 @@
+# Design Patterns
+
+* [Constructor Pattern](constructor)
+* [Module Pattern](module)
+* [Revealing Module Pattern](revealing-module)
+* [Singleton Pattern](singleton)
+* [Observer Pattern](observer)
+* [Mediator Pattern](mediator)
+* [Prototype Pattern](prototype)
+* [Command Pattern](command)
+* [Facade Pattern](facade)
+* [Factory Pattern](factory)
+* [Mixin Pattern](mixin)
+* [Decorator Pattern](decorator)
+* [Flyweight Pattern](flyweight)
