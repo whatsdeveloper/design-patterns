@@ -6,11 +6,11 @@ Modules are an integral piece of any robust application's architecture and typic
 
 In JavaScript, there are several options for implementing modules. These include:
 
-    * The Module pattern
-    * Object literal notation
-    * AMD modules
-    * CommonJS modules
-    * ECMAScript Harmony modules
+* The Module pattern
+* Object literal notation
+* AMD modules
+* CommonJS modules
+* ECMAScript Harmony modules
 
 The Module pattern is based in part on object literals and so it makes sense to refresh our knowledge of them first.
 
@@ -85,6 +85,24 @@ Using object literals can assist in encapsulating and organizing your code and R
 That said, if we're opting for this technique, we may be equally as interested in the Module pattern. It still uses object literals but only as the return value from a scoping function.
 
 ## The Module Pattern
+
+The Module pattern was originally defined as a way to provide both private and public encapsulation for classes in conventional software engineering.
+
+In JavaScript, the Module pattern is used to further emulate the concept of classes in such a way that we're able to include both public/private methods and variables inside a single object, thus shielding particular parts from the global scope. What this results in is a reduction in the likelihood of our function names conflicting with other functions defined in additional scripts on the page.
+
+### Privacy
+
+The Module pattern encapsulates "privacy", state and organization using closures. It provides a way of wrapping a mix of public and private methods and variables, protecting pieces from leaking into the global scope and accidentally colliding with another developer's interface. With this pattern, only a public API is returned, keeping everything else within the closure private.
+
+This gives us a clean solution for shielding logic doing the heavy lifting whilst only exposing an interface we wish other parts of our application to use. The pattern utilizes an immediately-invoked function expression ([IIFE](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) - see the section on namespacing patterns for more on this) where an object is returned.
+
+It should be noted that there isn't really an explicitly true sense of "privacy" inside JavaScript because unlike some traditional languages, it doesn't have access modifiers. Variables can't technically be declared as being public nor private and so we use function scope to simulate this concept. Within the Module pattern, variables or methods declared are only available inside the module itself thanks to closure. Variables or methods defined within the returning object however are available to everyone.
+
+### History
+
+From a historical perspective, the Module pattern was originally developed by a number of people including [Richard Cornford](http://groups.google.com/group/comp.lang.javascript/msg/9f58bd11bd67d937) in 2003. It was later popularized by Douglas Crockford in his lectures. Another piece of trivia is that if you've ever played with Yahoo's YUI library, some of its features may appear quite familiar and the reason for this is that the Module pattern was a strong influence for YUI when creating their components.
+
+### Examples
 
 Let's begin looking at an implementation of the Module pattern by creating a module which is self-contained.
 
@@ -286,7 +304,7 @@ var myModule = (function() {
 })();
 ```
 
-Toolkit And Framework-specific Module Pattern Implementations
+### Toolkit And Framework-specific Module Pattern Implementations
 
 **Dojo**
 
@@ -447,13 +465,13 @@ var myLibrary = library(
 );
 ```
 
-## Advantages
+### Advantages
 
 We've seen why the Constructor pattern can be useful, but why is the Module pattern a good choice? For starters, it's a lot cleaner for developers coming from an object-oriented background than the idea of true encapsulation, at least from a JavaScript perspective.
 
 Secondly, it supports private data - so, in the Module pattern, public parts of our code are able to touch the private parts, however the outside world is unable to touch the class's private parts (no laughing! Oh, and thanks to David Engfer for the joke).
 
-## Disadvantages
+### Disadvantages
 
 The disadvantages of the Module pattern are that as we access both public and private members differently, when we wish to change visibility, we actually have to make changes to each place the member was used.
 
