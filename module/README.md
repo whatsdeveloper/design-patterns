@@ -6,11 +6,11 @@ Modules are an integral piece of any robust application's architecture and typic
 
 In JavaScript, there are several options for implementing modules. These include:
 
-* The Module pattern
-* Object literal notation
-* AMD modules
-* CommonJS modules
-* ECMAScript Harmony modules
+- The Module pattern
+- Object literal notation
+- AMD modules
+- CommonJS modules
+- ECMAScript Harmony modules
 
 The Module pattern is based in part on object literals and so it makes sense to refresh our knowledge of them first.
 

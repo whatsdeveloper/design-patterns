@@ -12,10 +12,10 @@ It's often useful to refer back to published definitions of design patterns that
 
 We can now expand on what we've learned to implement the Observer pattern with the following components:
 
-* **Subject**: maintains a list of observers, facilitates adding or removing observers
-* **Observer**: provides an update interface for objects that need to be notified of a Subject's changes of state
-* **ConcreteSubject**: broadcasts notifications to observers on changes of state, stores the state of ConcreteObservers
-* **ConcreteObserver**: stores a reference to the ConcreteSubject, implements an update interface for the Observer to ensure state is consistent with the Subject's
+- **Subject**: maintains a list of observers, facilitates adding or removing observers
+- **Observer**: provides an update interface for objects that need to be notified of a Subject's changes of state
+- **ConcreteSubject**: broadcasts notifications to observers on changes of state, stores the state of ConcreteObservers
+- **ConcreteObserver**: stores a reference to the ConcreteSubject, implements an update interface for the Observer to ensure state is consistent with the Subject's
 
 First, let's model the list of dependent Observers a subject may have:
 
@@ -92,15 +92,15 @@ function Observer() {
 
 In our sample application using the above Observer components, we now define:
 
-* A button for adding new observable checkboxes to the page
-* A control checkbox which will act as a subject, notifying other checkboxes they should be checked
-* A container for the new checkboxes being added
+- A button for adding new observable checkboxes to the page
+- A control checkbox which will act as a subject, notifying other checkboxes they should be checked
+- A container for the new checkboxes being added
 
 We then define ConcreteSubject and ConcreteObserver handlers for both adding new observers to the page and implementing the updating interface. See below for inline comments on what these components do in the context of our example.
 
 ```html
 <button id="addNewObserver">Add New Observer checkbox</button>
-<input id="mainCheckbox" type="checkbox"/>
+<input id="mainCheckbox" type="checkbox" />
 <div id="observersContainer"></div>
 ```
 
@@ -280,11 +280,11 @@ For those wishing to use the Publish/Subscribe pattern with vanilla JavaScript (
 
 jQuery developers in particular have quite a few other options and can opt to use one of the many well-developed implementations ranging from Peter Higgins's jQuery plugin to Ben Alman's (optimized) Pub/Sub jQuery gist on GitHub. Links to just a few of these can be found below.
 
-* Ben Alman's [Pub/Sub gist](https://gist.github.com/661855) (recommended)
-* Rick Waldron's [jQuery-core style](https://gist.github.com/705311)
-* Peter Higgins" [plugin](http://github.com/phiggins42/bloody-jquery-plugins/blob/master/pubsub.js)
-* AppendTo's Pub/Sub in [AmplifyJS](http://amplifyjs.com)
-* Ben Truyman's [gist](https://gist.github.com/826794)
+- Ben Alman's [Pub/Sub gist](https://gist.github.com/661855) (recommended)
+- Rick Waldron's [jQuery-core style](https://gist.github.com/705311)
+- Peter Higgins" [plugin](http://github.com/phiggins42/bloody-jquery-plugins/blob/master/pubsub.js)
+- AppendTo's Pub/Sub in [AmplifyJS](http://amplifyjs.com)
+- Ben Truyman's [gist](https://gist.github.com/826794)
 
 So that we are able to get an appreciation for how many of the vanilla JavaScript implementations of the Observer pattern might work, let's take a walk through of a minimalist version of Publish/Subscribe I released on GitHub under a project called [pubsubz](http://github.com/addyosmani/pubsubz). This demonstrates the core concepts of subscribe, publish as well as the concept of unsubscribing.
 
@@ -479,7 +479,6 @@ It's left up to the subscribers to those topics to then delegate what happens wi
 </script>
 
 <div id="container">
-
   <div class="sampleForm">
     <p>
       <label for="twitter_handle">Twitter handle:</label>
@@ -508,7 +507,6 @@ It's left up to the subscribers to those topics to then delegate what happens wi
     <div id="users"><h3>Recent users</h3></div>
     <div id="ratings"><h3>Recent movies rated</h3></div>
   </div>
-
 </div>
 ```
 
@@ -566,8 +564,8 @@ Notice how in our sample below, one topic notification is made when a user indic
 
 ```html
 <form id="flickrSearch">
-   <input type="text" name="tag" id="query"/>
-   <input type="submit" name="submit" value="submit"/>
+  <input type="text" name="tag" id="query" />
+  <input type="submit" name="submit" value="submit" />
 </form>
 
 <div id="lastQuery"></div>
